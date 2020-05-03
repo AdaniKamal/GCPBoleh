@@ -1,3 +1,50 @@
 Kubernetes in Google Cloud: Challenge Lab
 
 Task 6
+
+docker ps
+
+docker kill 695d9ec193e2
+
+export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/component=jenkins-master" -l "app.kubernetes.io/instance=cd" -o jsonpath="{.items[0].metadata.name}")
+
+kubectl port-forward $POD_NAME 8080:8080 >> /dev/null &
+
+printf $(kubectl get secret cd-jenkins -o jsonpath=”{.data.jenkins-admin-password}” | base64 — decode);echo
+
+# Open web-preview and login as admin with password from last command
+click credentials -> Jenkins -> Global Credentials
+Click add credentials
+# select Google Service Account from metadata
+# Click ok
+# Click jenkins (top left)
+# Click new item
+# enter valkyrie-app
+# click pipeline
+# click ok
+# select pipeline script from SCM
+# Set SCM to Git
+# Add the source code repo ( find it using gcloud source repos list)
+
+gcloud source repos list
+
+# Set credentials to qwiklabs-…
+# Click save
+
+# Change color
+sed -i “s/green/orange/g” source/html.go
+
+# Update project in Jenkinsfile
+sed -i “s/YOUR_PROJECT/$GOOGLE_CLOUD_PROJECT/g” Jenkinsfile
+git config — global user.email “you@example.com”
+git config — global user.name “student”
+git add .
+git commit -m “build pipeline init”
+git push
+
+# in jenkins click build now on the job
+
+initial build takes a while, just wait
+
+
+
