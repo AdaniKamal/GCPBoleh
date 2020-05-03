@@ -1,1 +1,12 @@
+Task 4
 
+sed -i s#IMAGE_HERE#gcr.io/$GOOGLE_CLOUD_PROJECT/valkyrie-app:v0.0.1#g k8s/deployment.yaml
+
+Kurbenetes Engine > Clusters
+Connect > copy
+
+gcloud container clusters get-credentials valkyrie-dev --zone us-east1-d --project qwiklabs-gcp-00-15c467e8f799
+
+kubectl create -f k8s/deployment.yaml
+
+kubectl create -f k8s/service.yaml
