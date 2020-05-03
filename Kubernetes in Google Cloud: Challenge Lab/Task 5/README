@@ -1,3 +1,15 @@
 Kubernetes in Google Cloud: Challenge Lab
 
 Task 5
+
+git merge origin/kurt-dev
+
+kubectl scale deployment valkyrie-dev –replicas=3
+
+kubectl get deployment
+
+docker build -t gcr.io/$GOOGLE_CLOUD_PROJECT/valkyrie-app:v0.0.2 .
+
+docker push gcr.io/$GOOGLE_CLOUD_PROJECT/valkyrie-app:v0.0.2
+
+kubectl edit deployment valkyrie-dev
