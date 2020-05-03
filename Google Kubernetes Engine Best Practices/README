@@ -1,10 +1,10 @@
 Quiz Google Kubernetes Engine Best Practices
 
 1. There are numerous advantages to using containers to deploy applications. Which of the following is NOT an advantage?
-= Which of the following is NOT true of regions and zones where Kubernetes resources live?
+= Lightweight - The kernel is not shared, making it so that each application uses a full OS image.
 
 2. Which of the following is NOT true of regions and zones where Kubernetes resources live?
-=
+= Each zone has one or more regions.
 
 3. Which of the following best describes Stackdriver Kubernetes Monitoring?
 = It is a new Stackdriver feature that more tightly integrates with GKE to better show you key stats about your cluster and the workloads and services running in it.
@@ -13,13 +13,13 @@ Quiz Google Kubernetes Engine Best Practices
 = Terraform is a declarative Infrastructure as Code tool that enables configuration files to be used to automate the deployment and evolution of infrastructure in the cloud.
 
 5. Why is distributed tracing an important feature of Stackdriver for Kubernetes Engine Monitoring?
-= 
+= It allows developers to much more easily identify which service is causing slowdowns affecting the rest of the system.
 
 6. Deteriorating performance in an underlying system does not impact all the other systems that rely on it.
 = False statement
 
 7. What is Stackdriver Logging and why is it important?
-= 
+= It is a service that is used to aggregate logs from all GCP resources as well as any custom resources (on other platforms) to allow for one centralized store for all logs and metrics.
 
 8. Which of the following is NOT true of Stackdriver log events?
 = Stackdriver log events are generated with Google Cloud Armor, which delivers defense at scale against infrastructure attacks using Google’s global infrastructure and security systems.
